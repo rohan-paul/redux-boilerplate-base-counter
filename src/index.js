@@ -1,36 +1,58 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // hot reload for development
-import {  AppContainer } from 'react-hot-loader'
+import { AppContainer } from 'react-hot-loader';
+
 
 // redux deps
-import {  createStor, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 
-import './index.css';
+import reducer from './reducers';
+
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import './index.css';
 
 
 
-if (module.hot) {
-    module.hot.accepts('./App' () => {render(App) })
-    module.hot.accepts('./reducers', () => { store.replaceReducer(reducer) })
-}
+const middleware = [thunk];
+if (process.env.NODE_ENV !== 'production') middleware.push(logger);
 
-render(App);rker();
+const store = createStore(
+  reducer,
+  applyMiddleware(...middleware),
+);
 
+const root = document.getElementById('root');
 
-
-if (module.hot) {
-    module.hot.accepts('./App', () => {render(App) })
-    module.hot.accepts('./reducers', () => { store.replaceReducer(reducer) })
-}
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Provider store={store}>
+        <Component />
+      </Provider>
+    </AppContainer>,
+    root,
+  );
+};
 
 render(App);
 
+if (module.hot) {
+  module.hot.accept('./App', () => { render(App); });
+  module.hot.accept('./reducers', () => { store.replaceReducer(reducer); });
+}
+
+
+
+
 /* What is repalaceReducer()
 
-Replaces the reducer currently used by the store to calculate the state. You might need this if your app implements code splitting, and you want to load some of the reducers dynamically. You might also need this if you implement a hot reloading mechanism for Redux. */
+Replaces the reducer currently used by the store to calculate the state. You might need this if your app implements code splitting, and you want to load some of the reducers dynamically. You might also need this if you implement a hot reloading mechanism for Redux.
+
+From my note in - /home/paul/codes-Lap/Curated-List-For-JavaScript-Interviews/React/Redirect-from-react-router-dom.md
+
+
+*/
