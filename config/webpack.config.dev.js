@@ -51,6 +51,9 @@ module.exports = {
     // We include the app code last so that if there is a runtime error during
     // initialization, it doesn't blow up the WebpackDevServer client, and
     // changing JS code would still trigger a refresh.
+
+    // Paul - To enable hot reloading and including the below line following - http://joshbroton.com/add-react-hot-reloading-create-react-app/ 
+    'react-hot-loader/patch',
   ],
   output: {
     // Add /* filename */ comments to generated require()s in the output.
