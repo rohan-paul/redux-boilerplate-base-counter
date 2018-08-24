@@ -3,6 +3,7 @@ import { BrowserRouter, Link } from 'react-router-dom'
 import Routes from './Routes'
 
 import './App.css';
+
 import About from './containers/About';
 
 class App extends Component {
@@ -11,7 +12,7 @@ class App extends Component {
         <BrowserRouter>
             <main className="container">
             <div>
-                <h1>hellow wordl</h1>
+                <h1>hello world</h1>
             </div>
             <ul className="left">
                 <li><Link to="/">Home</Link></li>
