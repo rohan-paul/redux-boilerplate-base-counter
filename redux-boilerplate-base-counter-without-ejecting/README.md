@@ -1,14 +1,9 @@
-A very basic boilerplate to render the classic counter functionality in Redux and for accomodating react-hot-loader I have created to different ways to implement it, both without ejecting from create-react-app and with ejecting create-react-app.
-
-While implementing the react-hot-loader without ejecting create-react-app I have followed []this guide](https://daveceddia.com/hot-reloading-create-react-app/)
-
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). And then ejected with ``npm run eject``
 
 ## Available Scripts
 
-Go seperately into each of the project directory and run:
+In the project directory, you can run:
 
-### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.<br>
