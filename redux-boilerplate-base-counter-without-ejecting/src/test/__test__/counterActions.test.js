@@ -7,5 +7,11 @@ describe('Counter actions', () => {
             type: INCREMENT
         }
         expect(actions.addToCounter()).toEqual(expectedAction);
+    });
+    it('should handle DECREMENT counter', () => {
+        const expectedAction = {
+            type: DECREMENT
+        }
+        expect(actions.removeFromCounter()).toEqual(expectedAction);
     })
 })

@@ -12,3 +12,5 @@ export default function counterReducer(state=0, action) {
 
     }
 }
+
+/* Note, the above function takes 2 arguments. The first is state, which takes  a default value of 0 and the second argument is an action. This action is the hook for action.type value from my actions/types.js file */
