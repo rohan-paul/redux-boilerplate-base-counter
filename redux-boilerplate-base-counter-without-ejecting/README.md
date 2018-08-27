@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). And then ejected with ``npm run eject``
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Available Scripts
 

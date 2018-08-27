@@ -17,7 +17,7 @@ describe('Routes', () => {
         );
         expect(wrapper.find(Home)).toHaveLength(1)
     })
-    it('/about path should redirect to About component', () => {        
+    it('/about path should redirect to About component', () => {
         const wrapper = mount(
                 <MemoryRouter initialEntries={['/about']} initialIndex={0} >
                     <Routes />
