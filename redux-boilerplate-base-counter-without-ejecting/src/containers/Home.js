@@ -14,7 +14,7 @@ const Home = ({ counterValue, handleIncreaseValue, handleDecreaseValue }) => (
       <button onClick={handleDecreaseValue}>Remove</button>
     </div>
   );
-  
+
   Home.propTypes = {
     counterValue: PropTypes.number.isRequired,
     handleIncreaseValue: PropTypes.func.isRequired,
